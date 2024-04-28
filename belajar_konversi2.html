@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>Belajar Stack</title>
+</head>
+
+<body>
+  <input type=text id=mm size=3>
+  <input type=button value=Hitung onclick='olah();'>
+  <input type=text id=nn size=13>
+
+  <script>
+    var stack = new Array();
+
+    function olah() {
+      var angka = document.getElementById('mm').value;
+
+      while (angka > 0)//3
+      {
+        sisa = angka % 2;//1
+        stack.push(sisa);
+        angka = (angka - sisa) / 2;	//(1-1)/2 
+      }
+      //document.getElementById('nn').value = stack.toString(); 
+
+      /* var a= stack.pop();
+       var b= stack.pop();
+       var c= stack.pop();
+       var d= stack.pop();
+       
+       hasil = "";
+       hasil += a; // hasil = hasil + a;
+       hasil += b; // hasil = hasil + b;
+       hasil += c;
+       hasil += d;*/
+
+      hasil = "";
+      jml = stack.length;
+      for (x = 0; x < jml; x++) {
+        hasil += stack.pop();// hasil = hasil + stack.pop(); 
+      }
+
+      document.getElementById('nn').value = hasil;
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>

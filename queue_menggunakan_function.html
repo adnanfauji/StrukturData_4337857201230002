@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <title>Antrian</title>
+</head>
+
+<body>
+  <script>
+    var queue = [];
+    var keluarQueue = [];
+    function masukAntrian() {
+      data = document.getElementById('tm').value;
+      queue.push(data);
+      document.getElementById('ta').value = queue.toString();
+      data = document.getElementById('tm').value = '';
+      data = document.getElementById('tm').focus();
+    }
+    function keluarAntrian() {
+      var dataKeluar = queue.shift();
+      keluarQueue.push(dataKeluar);
+      document.getElementById('tk').value = keluarQueue.toString();
+      document.getElementById('ta').value = queue.toString();
+    }
+  </script>
+  <input type=text id=tm size=2>
+  <input type=button value=Masuk onclick='masukAntrian(); '>
+  <input type=text id=ta size=10>
+  <input type=button value=Keluar onclick='keluarAntrian();'>
+  <input type=text id=tk size=5>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan 7 - Konversi desimal ke biner</title>
+  <style>
+    .btn {
+      width: 100px;
+      min-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    <table border="0">
+      <tr>
+        <td><input type="text" id="mm" placeholder="Input data anda"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="btn" value="Hitung" onclick='olah();'></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="nn" placeholder="Hasil data anda"></td>
+      </tr>
+    </table>
+  </form>
+  <script>
+    var stack = new Array();
+
+    function olah() {
+      var angka = document.getElementById('mm').value;
+      while (angka > 0) {
+        sisa = angka % 2;
+        stack.push(sisa);
+        angka = (angka - sisa) / 2;
+      }
+      let hasil = "";
+      jml = stack.length;
+      for (let x = 0; x < jml; x++) {
+        hasil += stack.pop();
+      }
+      document.getElementById('nn').value = hasil;
+    }
+  </script>
+</body>
+
+</html>

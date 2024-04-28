@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <title>Belajar record</title>
+</head>
+
+<body>
+  <input type=text id=jj size=3>
+  <input type=button value=Konversi onclick='hitung();'>
+  <input type=text id=kk size=13>
+
+  <script>
+    var stak = [];
+
+    function hitung() {
+      var bil = document.getElementById('jj').value;  //25= 11001
+      while (bil > 0) {
+        sisa = bil % 2;
+        stak.push(sisa);
+
+        bil = (bil - sisa) / 2
+      }
+
+      var hasil = '';
+      var atas = stak.length;
+      for (j = 0; j < atas; j++) {
+        hasil += stak.pop();
+      }
+
+      /*
+       while(stak.length >0)
+       {
+        hasil += stak.pop();	
+       }
+     	
+       for(j=stak.length-1; j>0; j--)
+       {
+         hasil += stak.pop();
+       }	
+     	
+       for(j=0; j<stak.length;)
+       {
+        hasil += stak.pop();	 
+       }	
+      */
+
+      document.getElementById('kk').value = hasil;
+    }
+  </script>
+</body>
+
+</html>

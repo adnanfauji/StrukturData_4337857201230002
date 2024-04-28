@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <title>Struktur Data Queue</title>
+  <script>
+    var queue = new Array();
+    function MasukAntrian() {
+      var data = document.getElementById('tm').value;
+      queue.push(data);
+      document.getElementById('tm').value = '';
+      document.getElementById('tm').focus();
+    }
+    function KeluarAntrian() {
+      var yang_keluar_antrian = queue.shift();
+      if (queue.length == 0) { return "Antrian Sudah Kosong"; }
+      else { return yang_keluar_antrian; }
+    }
+    function yangKeluar() { document.getElementById('tk').value = KeluarAntrian(); }
+    function DalamAntrian() {
+      document.getElementById('antrian').options.length = 0;
+      for (var i = 0; i < queue.length; i++) {
+        var data = new Option(queue[i]);
+        document.getElementById('antrian').options[i] =
+
+          data;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form>
+    <input type=text id=tm size=1>
+    <input type=button value="Masuk Antrian" onClick='MasukAntrian(); DalamAntrian();'>
+    <select size=5 id=antrian>
+      <option>Isi Antrian....</option>
+    </select>
+    <input type=text size=12 id=tk name=keluaran>
+    <input type=button value="KeluarAntrian" onClick="yangKeluar();DalamAntrian();">
+  </form>
+</body>
+
+</html>

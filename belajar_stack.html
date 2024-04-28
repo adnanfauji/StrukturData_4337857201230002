@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Belajar Stack</title>
+</head>
+
+<body>
+  <input type=text id=aa>
+  <input type=button value=Konversi onclick='cari();'>
+  <input type=text id=bb>
+</body>
+
+<script>
+  function cari() {
+    var stak = [];
+    var bil = document.getElementById('aa').value;
+
+    while (bil > 0) {
+      sisa = bil % 2;
+      stak.push(sisa);
+      bil = (bil - sisa) / 2;
+    }
+
+    var data = '';//kosong 12: 1100
+    var pjg = stak.length;
+    for (x = 0; x < pjg; x++) {
+      y = stak.pop();//1
+      data += y;//1+1 = 11
+    }
+
+    document.getElementById('bb').value = data;
+  }
+</script>
+
+</html>
