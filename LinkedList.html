@@ -75,15 +75,12 @@
       }
     }
 
-    const ll = new LinkedList(0);
-    ll.append(1);
-    ll.append(2);
+    const ll = new LinkedList("A");
+    ll.append("B");
+    ll.append("C");
 
-    ll.prepend(-1);
-    ll.insert(2, 5);
-    ll.remove(1);
-
-    console.log(ll);
+    console.log(ll.lookup(1));
+    // console.log(ll);
   </script>
 
 
